@@ -11,8 +11,11 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 9.2.0
       - run: unzip -q zxht-client-source.zip
-      - run: cd zxht-client && chmod +x gradlew && ./gradlew build
+      - run: cd zxht-client && gradle build
       - uses: actions/upload-artifact@v4
         with:
           name: zxht-client-jar
