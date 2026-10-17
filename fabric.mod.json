@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "zxht",
+  "version": "${version}",
+  "name": "ZXHT Client",
+  "description": "A clean black-and-white glass PvP client: blurred UI, account manager, wings, footstep logos, player rings and calm sounds. Visuals only, no cheats.",
+  "authors": ["ZXHT"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.zxht.client.ZxhtClient"]
+  },
+  "mixins": [
+    { "config": "zxht.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

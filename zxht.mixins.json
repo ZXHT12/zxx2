@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "dev.zxht.client.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "MinecraftClientMixin",
+    "MinecraftClientAccessor",
+    "ButtonStyleMixin",
+    "ClickSoundMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
