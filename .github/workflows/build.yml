@@ -1,0 +1,20 @@
+name: Build ZXHT Client
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - run: unzip -q zxht-client-source.zip
+      - run: cd zxht-client && chmod +x gradlew && ./gradlew build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zxht-client-jar
+          path: zxht-client/build/libs/*.jar
+          
