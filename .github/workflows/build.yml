@@ -15,9 +15,9 @@ jobs:
         with:
           gradle-version: 9.2.0
       - run: unzip -q zxht-client-source.zip
+      - run: sed -i 's/net.minecraft.client.option.ParticlesMode/net.minecraft.particle.ParticlesMode/' zxht-client/src/main/java/dev/zxht/client/fx/Performance.java
       - run: cd zxht-client && gradle build
       - uses: actions/upload-artifact@v4
         with:
           name: zxht-client-jar
           path: zxht-client/build/libs/*.jar
-          
